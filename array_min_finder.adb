@@ -105,11 +105,11 @@ begin
       Remainder : Integer := Array_Size mod Thread_Count;
       Start, Fin : Positive := 1;
    begin
-	  Put_Line("Starting");
       Initialize_Vector (Array_Size);
 
       Controller.Set_Thread_Count (Thread_Count);
 	  Put_Line("Starting " & Thread_Count'Image & " threads with uniformly distributed segments:");
+	  Put_Line("");
       for I in 1 .. Thread_Count loop
          if Remainder > 0 then
             Fin := Start + Block_Size;
